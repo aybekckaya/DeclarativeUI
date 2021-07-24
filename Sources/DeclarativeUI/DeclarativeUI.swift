@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - UIView {View Factory}
 extension UIView {
-    static func view() -> UIView {
+    public static func view() -> UIView {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -19,7 +19,7 @@ extension UIView {
 
 // MARK: - UIStackView {View Factory}
 extension UIStackView {
-    static func stackView(alignment: UIStackView.Alignment, distribution: UIStackView.Distribution, spacing: CGFloat, axis: NSLayoutConstraint.Axis) -> UIStackView {
+    public static func stackView(alignment: UIStackView.Alignment, distribution: UIStackView.Distribution, spacing: CGFloat, axis: NSLayoutConstraint.Axis) -> UIStackView {
         let stack = UIStackView(frame: .zero)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignment = alignment
@@ -32,7 +32,7 @@ extension UIStackView {
 
 // MARK: - UIImageView {View Factory}
 extension UIImageView {
-    static func imageView() -> UIImageView {
+    public static func imageView() -> UIImageView {
         let imView = UIImageView(frame: .zero)
         imView.translatesAutoresizingMaskIntoConstraints = false
         return imView
@@ -41,7 +41,7 @@ extension UIImageView {
 
 // MARK: - UICollectionView {View Factory}
 extension UICollectionView {
-    static func collectionView(layout: UICollectionViewLayout) -> UICollectionView {
+    public static func collectionView(layout: UICollectionViewLayout) -> UICollectionView {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
@@ -50,7 +50,7 @@ extension UICollectionView {
 
 // MARK: - UILabel {View Factory}
 extension UILabel {
-    static func label() -> UILabel {
+    public static func label() -> UILabel {
         let lbl = UILabel(frame: .zero)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -59,7 +59,7 @@ extension UILabel {
 
 // MARK: - UITableView {View Factory}
 extension UITableView {
-    static func tableView() -> UITableView {
+    public static func tableView() -> UITableView {
         let table = UITableView(frame: .zero, style: .plain)
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
@@ -68,7 +68,7 @@ extension UITableView {
 
 // MARK: - UIButton {View Factory}
 extension UIButton {
-    static func button() -> UIButton {
+    public static func button() -> UIButton {
         let btn = UIButton(frame: .zero)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -78,14 +78,14 @@ extension UIButton {
 // MARK: - UIView
 extension UIView {
     @discardableResult
-    func roundCorners(by value: CGFloat, maskToBounds: Bool = false) -> UIView {
+    public func roundCorners(by value: CGFloat, maskToBounds: Bool = false) -> UIView {
         self.layer.cornerRadius = value
         self.layer.masksToBounds = maskToBounds
         return self
     }
     
     @discardableResult
-    func shadow(color: UIColor, opacity: Float, offset: CGSize, radius: CGFloat) -> UIView {
+    public func shadow(color: UIColor, opacity: Float, offset: CGSize, radius: CGFloat) -> UIView {
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = offset
@@ -96,7 +96,7 @@ extension UIView {
     }
     
     @discardableResult
-    func backgroundColor(_ color: UIColor) -> UIView {
+    public func backgroundColor(_ color: UIColor) -> UIView {
         self.backgroundColor = color
         return self
     }
@@ -104,34 +104,34 @@ extension UIView {
 
 // MARK: - Casting
 extension UIView {
-    func asStackView() -> UIStackView {
+    public func asStackView() -> UIStackView {
         return self as! UIStackView
     }
     
-    func asImageView() -> UIImageView {
+    public func asImageView() -> UIImageView {
         return self as! UIImageView
     }
     
-    func asCollectionView() -> UICollectionView {
+    public func asCollectionView() -> UICollectionView {
         return self as! UICollectionView
     }
     
-    func asLabel() -> UILabel {
+    public func asLabel() -> UILabel {
         return self as! UILabel
     }
     
-    func asTableView() -> UITableView {
+    public func asTableView() -> UITableView {
         return self as! UITableView
     }
     
-    func asButton() -> UIButton {
+    public func asButton() -> UIButton {
         return self as! UIButton
     }
 }
 
 // MARK: - CALayer
 extension CALayer {
-    static func gradientLayer(colors: [UIColor], startPoint: CGPoint, endPoint: CGPoint ) -> CAGradientLayer {
+    public static func gradientLayer(colors: [UIColor], startPoint: CGPoint, endPoint: CGPoint ) -> CAGradientLayer {
         let gradient = CAGradientLayer()
         gradient.startPoint = startPoint
         gradient.endPoint = endPoint
@@ -140,13 +140,13 @@ extension CALayer {
     }
     
     @discardableResult
-    func roundCorners(by value: CGFloat) -> CALayer {
+    public func roundCorners(by value: CGFloat) -> CALayer {
         self.cornerRadius = value
         return self
     }
     
     @discardableResult
-    func asGradientLayer() -> CAGradientLayer {
+    public func asGradientLayer() -> CAGradientLayer {
         return self as! CAGradientLayer
     }
 }
@@ -154,25 +154,25 @@ extension CALayer {
 // MARK: UILabel
 extension UILabel {
     @discardableResult
-    func font(_ font: UIFont) -> UILabel{
+    public func font(_ font: UIFont) -> UILabel{
         self.font = font
         return self
     }
     
     @discardableResult
-    func textColor(_ color: UIColor) -> UILabel {
+    public func textColor(_ color: UIColor) -> UILabel {
         self.textColor = color
         return self
     }
     
     @discardableResult
-    func alignment(_ alignment: NSTextAlignment) -> UILabel {
+    public func alignment(_ alignment: NSTextAlignment) -> UILabel {
         self.textAlignment = alignment
         return self
     }
     
     @discardableResult
-    func numberOfLines(_ count: Int) -> UILabel {
+    public func numberOfLines(_ count: Int) -> UILabel {
         self.numberOfLines = count
         return self
     }
@@ -181,19 +181,19 @@ extension UILabel {
 // MARK: - UIButton
 extension UIButton {
     @discardableResult
-    func contentEdgeInsets(_ edges: UIEdgeInsets) -> UIButton {
+    public func contentEdgeInsets(_ edges: UIEdgeInsets) -> UIButton {
         self.contentEdgeInsets = edges
         return self
     }
     
     @discardableResult
-    func titleFont(_ font: UIFont) -> UIButton {
+    public func titleFont(_ font: UIFont) -> UIButton {
         self.titleLabel?.font = font
         return self
     }
     
     @discardableResult
-    func titleColor(_ color: UIColor) -> UIButton {
+    public  func titleColor(_ color: UIColor) -> UIButton {
         self.setTitleColor(color, for: .normal)
         return self
     }
@@ -202,31 +202,31 @@ extension UIButton {
 // MARK: - UITableView
 extension UITableView {
     @discardableResult
-    func seperatorStyle(_ style: UITableViewCell.SeparatorStyle) -> UITableView {
+    public  func seperatorStyle(_ style: UITableViewCell.SeparatorStyle) -> UITableView {
         self.separatorStyle = style
         return self
     }
     
     @discardableResult
-    func registerCell(_ cell: AnyClass, identifier: String) -> UITableView {
+    public  func registerCell(_ cell: AnyClass, identifier: String) -> UITableView {
         self.register(cell, forCellReuseIdentifier: identifier)
         return self
     }
     
     @discardableResult
-    func removeEmptyCellSeperators() -> UITableView {
+    public  func removeEmptyCellSeperators() -> UITableView {
         self.tableFooterView = UIView(frame: .zero)
         return self
     }
     
     @discardableResult
-    func showsVerticalScrollIndicators(_ show: Bool) -> UITableView {
+    public  func showsVerticalScrollIndicators(_ show: Bool) -> UITableView {
         self.showsVerticalScrollIndicator = show
         return self
     }
     
     @discardableResult
-    func showsHorizontalScrollIndicators(_ show: Bool) -> UITableView {
+    public func showsHorizontalScrollIndicators(_ show: Bool) -> UITableView {
         self.showsHorizontalScrollIndicator = show
         return self
     }
