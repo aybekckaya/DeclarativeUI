@@ -75,6 +75,24 @@ extension UIButton {
     }
 }
 
+// MARK: - UITextfield {View Factory}
+extension UITextField {
+    public static func textfield() -> UITextField {
+        let tf = UITextField(frame: .zero)
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }
+}
+
+// MARK: - UITextview {View Factory}
+extension UITextView {
+    public static func textview() -> UITextView {
+        let tv = UITextView(frame: .zero)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }
+}
+
 // MARK: - UIView
 extension UIView {
     @discardableResult
@@ -231,3 +249,119 @@ extension UITableView {
         return self
     }
 }
+
+// MARK: - UITextField
+extension UITextField {
+    @discardableResult
+    public func placeholder(_ text: String) -> UITextField {
+        self.placeholder = text
+        return self
+    }
+    
+    @discardableResult
+    public func borderStyle(_ style: UITextField.BorderStyle) -> UITextField {
+        self.borderStyle = style
+        return self
+    }
+    
+    @discardableResult
+    public func font(_ font: UIFont) -> UITextField {
+        self.font = font
+        return self
+    }
+    
+    @discardableResult
+    public func autoCorrectionType(_ type: UITextAutocorrectionType) -> UITextField {
+        self.autocorrectionType = type
+        return self
+    }
+    
+    @discardableResult
+    public func autoCapitalizationType(_ type: UITextAutocapitalizationType) -> UITextField {
+        self.autocapitalizationType = type
+        return self
+    }
+    
+    @discardableResult
+    public func contentType(_ type: UITextContentType) -> UITextField {
+        self.textContentType = type
+        return self
+    }
+    
+    @discardableResult
+    public func spellCheckingType(_ type: UITextSpellCheckingType) -> UITextField {
+        self.spellCheckingType = type
+        return self
+    }
+    
+    @discardableResult
+    public func keyboardType(_ type: UIKeyboardType) -> UITextField {
+        self.keyboardType = type
+        return self
+    }
+    
+    @discardableResult
+    public func returnKey(_ type: UIReturnKeyType) -> UITextField {
+        self.returnKeyType = type
+        return self
+    }
+    
+    @discardableResult
+    public func secureTextEntry(_ isEnabled: Bool) -> UITextField {
+        self.isSecureTextEntry = isEnabled
+        return self
+    }
+}
+
+// MARK: - UITextView
+extension UITextView {
+    
+    @discardableResult
+    public func font(_ font: UIFont) -> UITextView {
+        self.font = font
+        return self
+    }
+    
+    @discardableResult
+    public func autoCorrectionType(_ type: UITextAutocorrectionType) -> UITextView {
+        self.autocorrectionType = type
+        return self
+    }
+    
+    @discardableResult
+    public func autoCapitalizationType(_ type: UITextAutocapitalizationType) -> UITextView {
+        self.autocapitalizationType = type
+        return self
+    }
+    
+    @discardableResult
+    public func contentType(_ type: UITextContentType) -> UITextView {
+        self.textContentType = type
+        return self
+    }
+    
+    @discardableResult
+    public func spellCheckingType(_ type: UITextSpellCheckingType) -> UITextView {
+        self.spellCheckingType = type
+        return self
+    }
+    
+    @discardableResult
+    public func keyboardType(_ type: UIKeyboardType) -> UITextView {
+        self.keyboardType = type
+        return self
+    }
+    
+    @discardableResult
+    public func returnKey(_ type: UIReturnKeyType) -> UITextView {
+        self.returnKeyType = type
+        return self
+    }
+    
+    @discardableResult
+    public func secureTextEntry(_ isEnabled: Bool) -> UITextView {
+        self.isSecureTextEntry = isEnabled
+        return self
+    }
+}
+
