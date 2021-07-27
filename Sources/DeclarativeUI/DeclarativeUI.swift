@@ -353,7 +353,7 @@ extension UITextView {
     }
     
     @discardableResult
-    public func keyboardAppearance(_ type: UIKeyboardAppearance) -> UITextField {
+    public func keyboardAppearance(_ type: UIKeyboardAppearance) -> UITextView {
         self.keyboardAppearance = type
         return self
     }
